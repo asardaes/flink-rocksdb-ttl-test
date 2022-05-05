@@ -23,3 +23,11 @@ Note the resulting job id and call (maybe with `nohup`)
 ```shell
 misc/chkstat <JOB_ID> &
 ```
+
+## Results with 52ca77c
+
+After running for 1.6 days.
+
+![](misc/size_growth_52ca77c.png)<!-- -->
+
+![](misc/duration_trend_52ca77c.png)<!-- -->
