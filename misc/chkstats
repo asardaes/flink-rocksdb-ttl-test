@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+statsFile=/tmp/flink/state/chkstats.csv
+
+jobId=$1
+
+while true; do
+  if json=$(curl -sfS "http://localhost:8081/v1/jobs/$jobId/checkpoints"); then
+    latestSeen=$(test -f "$statsFile" && tail -n 1 "$statsFile" | cut -d ',' -f 1)
+    current=$(jq -r '.latest.completed.id' <<<"$json")
+
+    if [[ COMPLETED == "$(jq -r '.latest.completed.status' <<<"$json")" ]] && [[ "$latestSeen" != "$current" ]]; then
+      stateSize=$(jq -r '.latest.completed.state_size' <<<"$json")
+      duration=$(jq -r '.latest.completed.end_to_end_duration' <<<"$json")
+      triggerTimestamp=$(jq -r '.latest.completed.trigger_timestamp' <<<"$json")
+      echo "${current},${stateSize},${duration},${triggerTimestamp}" >>"$statsFile"
+    else
+      continue
+    fi
+  fi
+
+  sleep 30
+done
