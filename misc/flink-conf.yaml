@@ -24,6 +24,7 @@ restart-strategy.failure-rate.failure-rate-interval: 1 min
 restart-strategy.failure-rate.max-failures-per-interval: 3
 state.backend: rocksdb
 state.backend.incremental: true
+state.backend.rocksdb.compaction.style: UNIVERSAL
 state.backend.rocksdb.metrics.compaction-pending: true
 state.backend.rocksdb.metrics.estimate-num-keys: true
 state.backend.rocksdb.metrics.estimate-pending-compaction-bytes: true
