@@ -39,3 +39,11 @@ After running for 2.3 days.
 ![](misc/size_growth_67c76bb.png)<!-- -->
 
 ![](misc/duration_trend_67c76bb.png)<!-- -->
+
+## Results with c5dd5d2
+
+After running for 3.5 days.
+
+![](misc/size_growth_c5dd5d2.png)<!-- -->
+
+![](misc/duration_trend_c5dd5d2.png)<!-- -->
