@@ -25,7 +25,8 @@ restart-strategy.failure-rate.failure-rate-interval: 1 min
 restart-strategy.failure-rate.max-failures-per-interval: 3
 state.backend: rocksdb
 state.backend.incremental: true
-state.backend.rocksdb.compaction.level.max-size-level-base: 16 mb
+state.backend.rocksdb.compaction.level.max-size-level-base: 12 mb
+state.backend.rocksdb.compaction.level.target-file-size-base: 8 mb
 state.backend.rocksdb.metrics.compaction-pending: true
 state.backend.rocksdb.metrics.estimate-num-keys: true
 state.backend.rocksdb.metrics.estimate-pending-compaction-bytes: true
