@@ -1,4 +1,4 @@
-Tested with Flink 1.14.4 and Scala 2.12.
+Tested with Flink 1.14.4 and Scala 2.12. [Jira ticket](https://issues.apache.org/jira/browse/FLINK-27504).
 
 Copy `misc/flink-conf.yaml` to `$FLINK_HOME/conf/` and start a local cluster with
 
